@@ -9,11 +9,8 @@ app.use(cors());
 const port = 3000;
 main().catch((err) => console.log(err));
 
-console.log(process.env.URI);
-
 async function main() {
-  const URI = process.env.URI;
-  await mongoose.connect(`${URI}`);
+  await mongoose.connect("mongodb://127.0.0.1:27017/DemoFor");
   console.log("DB connected.");
 }
 
